@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24EBF6B42D97226200DE015E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6B32D97226200DE015E /* AppDelegate.swift */; };
+		24EBF6B62D97226200DE015E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6B52D97226200DE015E /* SceneDelegate.swift */; };
+		24EBF6B82D97226200DE015E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6B72D97226200DE015E /* ViewController.swift */; };
+		24EBF6BB2D97226200DE015E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 24EBF6BA2D97226200DE015E /* Base */; };
+		24EBF6BD2D97226500DE015E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24EBF6BC2D97226500DE015E /* Assets.xcassets */; };
+		24EBF6C02D97226500DE015E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 24EBF6BF2D97226500DE015E /* Base */; };
+		24EBF6CB2D97226500DE015E /* FitlabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6CA2D97226500DE015E /* FitlabTests.swift */; };
+		24EBF6D52D97226500DE015E /* FitlabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6D42D97226500DE015E /* FitlabUITests.swift */; };
+		24EBF6D72D97226500DE015E /* FitlabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6D62D97226500DE015E /* FitlabUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24EBF6C72D97226500DE015E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24EBF6A82D97226200DE015E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24EBF6AF2D97226200DE015E;
+			remoteInfo = Fitlab;
+		};
+		24EBF6D12D97226500DE015E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24EBF6A82D97226200DE015E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24EBF6AF2D97226200DE015E;
+			remoteInfo = Fitlab;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24EBF6B02D97226200DE015E /* Fitlab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitlab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EBF6B32D97226200DE015E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24EBF6B52D97226200DE015E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		24EBF6B72D97226200DE015E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24EBF6BA2D97226200DE015E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		24EBF6BC2D97226500DE015E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24EBF6BF2D97226500DE015E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		24EBF6C12D97226500DE015E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24EBF6C62D97226500DE015E /* FitlabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitlabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EBF6CA2D97226500DE015E /* FitlabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitlabTests.swift; sourceTree = "<group>"; };
+		24EBF6D02D97226500DE015E /* FitlabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitlabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EBF6D42D97226500DE015E /* FitlabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitlabUITests.swift; sourceTree = "<group>"; };
+		24EBF6D62D97226500DE015E /* FitlabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitlabUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24EBF6AD2D97226200DE015E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EBF6C32D97226500DE015E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EBF6CD2D97226500DE015E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24EBF6A72D97226200DE015E = {
+			isa = PBXGroup;
+			children = (
+				24EBF6B22D97226200DE015E /* Fitlab */,
+				24EBF6C92D97226500DE015E /* FitlabTests */,
+				24EBF6D32D97226500DE015E /* FitlabUITests */,
+				24EBF6B12D97226200DE015E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24EBF6B12D97226200DE015E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24EBF6B02D97226200DE015E /* Fitlab.app */,
+				24EBF6C62D97226500DE015E /* FitlabTests.xctest */,
+				24EBF6D02D97226500DE015E /* FitlabUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24EBF6B22D97226200DE015E /* Fitlab */ = {
+			isa = PBXGroup;
+			children = (
+				24EBF6B32D97226200DE015E /* AppDelegate.swift */,
+				24EBF6B52D97226200DE015E /* SceneDelegate.swift */,
+				24EBF6B72D97226200DE015E /* ViewController.swift */,
+				24EBF6B92D97226200DE015E /* Main.storyboard */,
+				24EBF6BC2D97226500DE015E /* Assets.xcassets */,
+				24EBF6BE2D97226500DE015E /* LaunchScreen.storyboard */,
+				24EBF6C12D97226500DE015E /* Info.plist */,
+			);
+			path = Fitlab;
+			sourceTree = "<group>";
+		};
+		24EBF6C92D97226500DE015E /* FitlabTests */ = {
+			isa = PBXGroup;
+			children = (
+				24EBF6CA2D97226500DE015E /* FitlabTests.swift */,
+			);
+			path = FitlabTests;
+			sourceTree = "<group>";
+		};
+		24EBF6D32D97226500DE015E /* FitlabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				24EBF6D42D97226500DE015E /* FitlabUITests.swift */,
+				24EBF6D62D97226500DE015E /* FitlabUITestsLaunchTests.swift */,
+			);
+			path = FitlabUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24EBF6AF2D97226200DE015E /* Fitlab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24EBF6DA2D97226500DE015E /* Build configuration list for PBXNativeTarget "Fitlab" */;
+			buildPhases = (
+				24EBF6AC2D97226200DE015E /* Sources */,
+				24EBF6AD2D97226200DE015E /* Frameworks */,
+				24EBF6AE2D97226200DE015E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fitlab;
+			productName = Fitlab;
+			productReference = 24EBF6B02D97226200DE015E /* Fitlab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24EBF6C52D97226500DE015E /* FitlabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24EBF6DD2D97226500DE015E /* Build configuration list for PBXNativeTarget "FitlabTests" */;
+			buildPhases = (
+				24EBF6C22D97226500DE015E /* Sources */,
+				24EBF6C32D97226500DE015E /* Frameworks */,
+				24EBF6C42D97226500DE015E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24EBF6C82D97226500DE015E /* PBXTargetDependency */,
+			);
+			name = FitlabTests;
+			productName = FitlabTests;
+			productReference = 24EBF6C62D97226500DE015E /* FitlabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		24EBF6CF2D97226500DE015E /* FitlabUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24EBF6E02D97226500DE015E /* Build configuration list for PBXNativeTarget "FitlabUITests" */;
+			buildPhases = (
+				24EBF6CC2D97226500DE015E /* Sources */,
+				24EBF6CD2D97226500DE015E /* Frameworks */,
+				24EBF6CE2D97226500DE015E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24EBF6D22D97226500DE015E /* PBXTargetDependency */,
+			);
+			name = FitlabUITests;
+			productName = FitlabUITests;
+			productReference = 24EBF6D02D97226500DE015E /* FitlabUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24EBF6A82D97226200DE015E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					24EBF6AF2D97226200DE015E = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					24EBF6C52D97226500DE015E = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 24EBF6AF2D97226200DE015E;
+					};
+					24EBF6CF2D97226500DE015E = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 24EBF6AF2D97226200DE015E;
+					};
+				};
+			};
+			buildConfigurationList = 24EBF6AB2D97226200DE015E /* Build configuration list for PBXProject "Fitlab" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24EBF6A72D97226200DE015E;
+			productRefGroup = 24EBF6B12D97226200DE015E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24EBF6AF2D97226200DE015E /* Fitlab */,
+				24EBF6C52D97226500DE015E /* FitlabTests */,
+				24EBF6CF2D97226500DE015E /* FitlabUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24EBF6AE2D97226200DE015E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EBF6BD2D97226500DE015E /* Assets.xcassets in Resources */,
+				24EBF6C02D97226500DE015E /* Base in Resources */,
+				24EBF6BB2D97226200DE015E /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EBF6C42D97226500DE015E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EBF6CE2D97226500DE015E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24EBF6AC2D97226200DE015E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EBF6B82D97226200DE015E /* ViewController.swift in Sources */,
+				24EBF6B42D97226200DE015E /* AppDelegate.swift in Sources */,
+				24EBF6B62D97226200DE015E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EBF6C22D97226500DE015E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EBF6CB2D97226500DE015E /* FitlabTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EBF6CC2D97226500DE015E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EBF6D72D97226500DE015E /* FitlabUITestsLaunchTests.swift in Sources */,
+				24EBF6D52D97226500DE015E /* FitlabUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24EBF6C82D97226500DE015E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24EBF6AF2D97226200DE015E /* Fitlab */;
+			targetProxy = 24EBF6C72D97226500DE015E /* PBXContainerItemProxy */;
+		};
+		24EBF6D22D97226500DE015E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24EBF6AF2D97226200DE015E /* Fitlab */;
+			targetProxy = 24EBF6D12D97226500DE015E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24EBF6B92D97226200DE015E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24EBF6BA2D97226200DE015E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		24EBF6BE2D97226500DE015E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24EBF6BF2D97226500DE015E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24EBF6D82D97226500DE015E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		24EBF6D92D97226500DE015E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24EBF6DB2D97226500DE015E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fitlab/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gulkzm.Fitlab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24EBF6DC2D97226500DE015E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fitlab/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gulkzm.Fitlab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		24EBF6DE2D97226500DE015E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gulkzm.FitlabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitlab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fitlab";
+			};
+			name = Debug;
+		};
+		24EBF6DF2D97226500DE015E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gulkzm.FitlabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitlab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fitlab";
+			};
+			name = Release;
+		};
+		24EBF6E12D97226500DE015E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gulkzm.FitlabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fitlab;
+			};
+			name = Debug;
+		};
+		24EBF6E22D97226500DE015E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gulkzm.FitlabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fitlab;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24EBF6AB2D97226200DE015E /* Build configuration list for PBXProject "Fitlab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EBF6D82D97226500DE015E /* Debug */,
+				24EBF6D92D97226500DE015E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24EBF6DA2D97226500DE015E /* Build configuration list for PBXNativeTarget "Fitlab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EBF6DB2D97226500DE015E /* Debug */,
+				24EBF6DC2D97226500DE015E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24EBF6DD2D97226500DE015E /* Build configuration list for PBXNativeTarget "FitlabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EBF6DE2D97226500DE015E /* Debug */,
+				24EBF6DF2D97226500DE015E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24EBF6E02D97226500DE015E /* Build configuration list for PBXNativeTarget "FitlabUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EBF6E12D97226500DE015E /* Debug */,
+				24EBF6E22D97226500DE015E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24EBF6A82D97226200DE015E /* Project object */;
+}
