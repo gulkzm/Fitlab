@@ -8,22 +8,67 @@
 import UIKit
 
 class HomeController: UIViewController {
-
-    @IBOutlet weak var collection: UICollectionView!
+    
     private let viewModel = HomeViewModel()
+    
+    private lazy var homeCollection: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        //        layout.minimumLineSpacing = 16
+        //        layout.minimumInteritemSpacing = 16
+        layout.sectionInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.backgroundColor = .background
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        return collection
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collection.dataSource = self
-        collection.delegate = self
+        homeCollection.dataSource = self
+        homeCollection.delegate = self
         configureUI()
+        configureConstraints()
+        
+        let navigationAppearance = UINavigationBarAppearance()
+        navigationAppearance.configureWithTransparentBackground()
+        navigationAppearance.backgroundColor = .clear
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationAppearance
+        navigationController?.navigationBar.standardAppearance = navigationAppearance
+        navigationController?.navigationBar.compactAppearance = navigationAppearance
+        
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithTransparentBackground()
+        //        tabBarAppearance.backgroundColor = .clear
+        if let tabBar = navigationController?.tabBarController?.tabBar {
+            tabBar.layer.cornerRadius = 40
+            tabBar.barTintColor = .white
+            tabBar.layer.masksToBounds = true
+        }
+        navigationController?.tabBarItem.scrollEdgeAppearance = tabBarAppearance
+        navigationController?.tabBarItem.standardAppearance = tabBarAppearance
     }
     
     fileprivate func configureUI() {
-        collection.register(HomeCell.self, forCellWithReuseIdentifier: "HomeCell")
-        collection.register(TopCell.self, forCellWithReuseIdentifier: "TopCell")
-        collection.register(HelloCell.self, forCellWithReuseIdentifier: "HelloCell")
+        [homeCollection
+        ].forEach{view.addSubview($0)}
+        
+        
+        homeCollection.register(HomeCell.self, forCellWithReuseIdentifier: "HomeCell")
+        homeCollection.register(TopCell.self, forCellWithReuseIdentifier: "TopCell")
+        homeCollection.register(HelloCell.self, forCellWithReuseIdentifier: "HelloCell")
     }
+    
+    fileprivate func configureConstraints() {
+        NSLayoutConstraint.activate([
+            homeCollection.topAnchor.constraint(equalTo: view.topAnchor),
+            homeCollection.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            homeCollection.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            homeCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    
     
 
 }
@@ -70,11 +115,11 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
         case 0:
                 .init(width: collectionView.frame.width, height: 40)
         case 1:
-                .init(width: collectionView.frame.width, height: 340)
+                .init(width: collectionView.frame.width, height: 360)
         case 2:
                 .init(width: collectionView.frame.width, height: 168)
         case 3:
-                .init(width: collectionView.frame.width, height: 340)
+                .init(width: collectionView.frame.width, height: 360)
         default:
             fatalError("Unexpected index")
         }

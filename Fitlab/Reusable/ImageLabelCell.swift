@@ -8,6 +8,17 @@
 import UIKit
 
 class ImageLabelCell: UICollectionViewCell {
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Healthy Taco Salad with fresh vegetable"
+        label.textColor = .darkGreen
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private lazy var image: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -18,14 +29,53 @@ class ImageLabelCell: UICollectionViewCell {
         return imageView
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private lazy var kcalImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+//        imageView.layer.cornerRadius = 16
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "kcal")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private lazy var kcalLabel: UILabel = {
         let label = UILabel()
-        label.text = "Healthy Taco Salad with fresh vegetable"
+        label.text = "120 Kcal"
+        label.textColor = .grey
         label.textAlignment = .left
-        label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.font = .systemFont(ofSize: 14, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private lazy var timeImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+//        imageView.layer.cornerRadius = 16
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "time")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private lazy var timeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "20 Min"
+        label.textColor = .grey
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    var isFavorited = false
+    
+    private lazy var favoriteButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "heart"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(toggleFavorite), for: .touchUpInside)
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -33,28 +83,66 @@ class ImageLabelCell: UICollectionViewCell {
         configureConstraints()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     fileprivate func configureConstraints() {
-        addSubview(titleLabel)
+        
         addSubview(image)
+        addSubview(kcalImage)
+        addSubview(kcalLabel)
+        addSubview(timeImage)
+        addSubview(timeLabel)
+        addSubview(titleLabel)
+        addSubview(favoriteButton)
         
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
             
-            image.topAnchor.constraint(equalTo: topAnchor/*, constant: 8*/),
-            image.leadingAnchor.constraint(equalTo: leadingAnchor/*, constant: 8*/),
-            image.trailingAnchor.constraint(equalTo: trailingAnchor/*, constant: -8*/),
-//            image.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -8)
-            image.bottomAnchor.constraint(equalTo: bottomAnchor),
+            image.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            image.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+//            image.widthAnchor.constraint(equalToConstant: 168),
+            image.heightAnchor.constraint(equalToConstant: 128),
+            image.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            image.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -12),
+            //            image.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            kcalImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            kcalImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            kcalImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -172),
+            kcalImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            
+            kcalLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            kcalLabel.leadingAnchor.constraint(equalTo: kcalImage.trailingAnchor, constant: 4),
+            kcalLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            
+            timeImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            timeImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 108),
+            timeImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -76),
+            timeImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            
+            timeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            timeLabel.leadingAnchor.constraint(equalTo: timeImage.trailingAnchor, constant: 4),
+            timeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            
+            favoriteButton.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+//            favoriteButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 128),
+            favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+//            favoriteButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -176),
+            favoriteButton.heightAnchor.constraint(equalToConstant: 60),
+            favoriteButton.widthAnchor.constraint(equalToConstant: 60)
+            
         ])
+    }
+    
+    @objc func toggleFavorite() {
+        isFavorited.toggle()
+        
+        let imageName = isFavorited ? "heart.fill" : "heart"
+        favoriteButton.setImage(UIImage(named: imageName), for: .normal)
     }
 }

@@ -14,6 +14,7 @@ class CategoryCell: UICollectionViewCell {
         configuration.baseBackgroundColor = .lightGrey
         configuration.baseForegroundColor = .darkGreen
         configuration.cornerStyle = .capsule
+        
 
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false

@@ -6,24 +6,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Recipes-->
         <scene sceneID="XXc-Gr-gs6">
             <objects>
-                <viewController id="Ps5-3Q-PbE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipesController" id="Ps5-3Q-PbE" customClass="RecipesController" customModule="Fitlab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5fk-LC-KId">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="9yY-89-L7I"/>
                         <color key="backgroundColor" name="Background"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eQy-h9-IES"/>
+                    <navigationItem key="navigationItem" title="Recipes" id="eQy-h9-IES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hJ-IB-ekx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="-833"/>
+            <point key="canvasLocation" x="2971.7557251908397" y="-833.09859154929586"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yLQ-hg-GKS">
@@ -39,23 +40,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V6V-KS-FYt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="18"/>
+            <point key="canvasLocation" x="2971.7557251908397" y="17.605633802816904"/>
         </scene>
-        <!--View Controller-->
+        <!--Workouts-->
         <scene sceneID="AZx-8B-v76">
             <objects>
-                <viewController id="PfQ-NH-CHQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkoutsController" id="PfQ-NH-CHQ" customClass="WorkoutsController" customModule="Fitlab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="06D-b1-2Fv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="W36-9O-rih"/>
                         <color key="backgroundColor" name="Background"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7ka-xu-Jof"/>
+                    <navigationItem key="navigationItem" title="Workouts" id="7ka-xu-Jof"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BM-rB-YFM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="861"/>
+            <point key="canvasLocation" x="2971.7557251908397" y="860.56338028169023"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rZR-xs-yHp">
@@ -80,32 +81,10 @@
                     <view key="view" contentMode="scaleToFill" id="E7L-Ot-6B2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KfU-n0-Phh">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
-                                <color key="backgroundColor" name="Background"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UVK-mO-aKk">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="l3C-qj-oLl"/>
                         <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="l3C-qj-oLl" firstAttribute="bottom" secondItem="KfU-n0-Phh" secondAttribute="bottom" id="86s-7q-dQR"/>
-                            <constraint firstItem="KfU-n0-Phh" firstAttribute="top" secondItem="l3C-qj-oLl" secondAttribute="top" id="Aem-pR-fvS"/>
-                            <constraint firstItem="KfU-n0-Phh" firstAttribute="leading" secondItem="l3C-qj-oLl" secondAttribute="leading" id="NHT-SW-1zB"/>
-                            <constraint firstItem="l3C-qj-oLl" firstAttribute="trailing" secondItem="KfU-n0-Phh" secondAttribute="trailing" id="RMR-Fh-P51"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e2A-4O-M50"/>
-                    <connections>
-                        <outlet property="collection" destination="KfU-n0-Phh" id="52m-G2-KCD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDm-A8-yNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,6 +98,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemPurpleColor"/>
+                        <color key="barTintColor" name="Background"/>
                         <color key="selectedImageTintColor" name="Sea"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -142,7 +123,9 @@
         <scene sceneID="mvp-N0-iXM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ftl-qy-z3Y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="dfQ-Zr-svu"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="dfQ-Zr-svu">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fLv-jl-qyY">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -161,7 +144,9 @@
         <scene sceneID="AzT-Xi-w7m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Hu-ZL-iua" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recipes" image="book" catalog="system" id="tM9-VN-WRO"/>
+                    <tabBarItem key="tabBarItem" title="Recipes" image="book" catalog="system" id="tM9-VN-WRO">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Alf-gD-C2X">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -180,7 +165,9 @@
         <scene sceneID="G8Y-6b-lYF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9C5-QJ-bLu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Blogs" image="pencil.line" catalog="system" id="M2W-Z1-cXU"/>
+                    <tabBarItem key="tabBarItem" title="Blogs" image="pencil.line" catalog="system" id="M2W-Z1-cXU">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QX3-PQ-oIp">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -241,10 +228,13 @@
         <image name="pencil.line" catalog="system" width="128" height="117"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <namedColor name="Background">
-            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Sea">
-            <color red="0.4392156862745098" green="0.72549019607843135" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.43900001049041748" green="0.72500002384185791" blue="0.74500000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

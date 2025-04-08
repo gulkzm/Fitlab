@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		243C8F782DA3A84D00A1D814 /* RecipesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C8F772DA3A84D00A1D814 /* RecipesController.swift */; };
 		248E130D2D9D1771005F4D9E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E130C2D9D1771005F4D9E /* HomeViewModel.swift */; };
 		248E130F2D9D1A6A005F4D9E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E130E2D9D1A6A005F4D9E /* HomeController.swift */; };
 		248E13132D9D589B005F4D9E /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E13122D9D589B005F4D9E /* HomeCell.swift */; };
@@ -15,6 +16,10 @@
 		248E131B2D9EA113005F4D9E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E131A2D9EA113005F4D9E /* CategoryCell.swift */; };
 		248E131E2D9FF509005F4D9E /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E131D2D9FF509005F4D9E /* TopCell.swift */; };
 		248E13202DA0160A005F4D9E /* HelloCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E131F2DA0160A005F4D9E /* HelloCell.swift */; };
+		24B9D7952DA3CB7300C9BA66 /* WorkoutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D7942DA3CB7300C9BA66 /* WorkoutsController.swift */; };
+		24B9D7972DA3FE0F00C9BA66 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D7962DA3FE0E00C9BA66 /* RecipeCell.swift */; };
+		24B9D7992DA405ED00C9BA66 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D7982DA405ED00C9BA66 /* WorkoutCell.swift */; };
+		24B9D79B2DA55D9100C9BA66 /* RecipesDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D79A2DA55D9100C9BA66 /* RecipesDetailController.swift */; };
 		24EBF6B42D97226200DE015E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6B32D97226200DE015E /* AppDelegate.swift */; };
 		24EBF6B62D97226200DE015E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6B52D97226200DE015E /* SceneDelegate.swift */; };
 		24EBF6BB2D97226200DE015E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 24EBF6BA2D97226200DE015E /* Base */; };
@@ -43,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		243C8F772DA3A84D00A1D814 /* RecipesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesController.swift; sourceTree = "<group>"; };
 		248E130C2D9D1771005F4D9E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		248E130E2D9D1A6A005F4D9E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		248E13122D9D589B005F4D9E /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -51,6 +57,10 @@
 		248E131A2D9EA113005F4D9E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		248E131D2D9FF509005F4D9E /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		248E131F2DA0160A005F4D9E /* HelloCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCell.swift; sourceTree = "<group>"; };
+		24B9D7942DA3CB7300C9BA66 /* WorkoutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsController.swift; sourceTree = "<group>"; };
+		24B9D7962DA3FE0E00C9BA66 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		24B9D7982DA405ED00C9BA66 /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		24B9D79A2DA55D9100C9BA66 /* RecipesDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailController.swift; sourceTree = "<group>"; };
 		24EBF6B02D97226200DE015E /* Fitlab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitlab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EBF6B32D97226200DE015E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24EBF6B52D97226200DE015E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +114,9 @@
 			children = (
 				248E130E2D9D1A6A005F4D9E /* HomeController.swift */,
 				248E130C2D9D1771005F4D9E /* HomeViewModel.swift */,
+				24B9D7942DA3CB7300C9BA66 /* WorkoutsController.swift */,
+				24B9D79A2DA55D9100C9BA66 /* RecipesDetailController.swift */,
+				243C8F772DA3A84D00A1D814 /* RecipesController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -130,6 +143,8 @@
 				248E131D2D9FF509005F4D9E /* TopCell.swift */,
 				248E13182D9E7417005F4D9E /* ImageLabelCell.swift */,
 				248E131F2DA0160A005F4D9E /* HelloCell.swift */,
+				24B9D7982DA405ED00C9BA66 /* WorkoutCell.swift */,
+				24B9D7962DA3FE0E00C9BA66 /* RecipeCell.swift */,
 				248E131A2D9EA113005F4D9E /* CategoryCell.swift */,
 			);
 			path = Reusable;
@@ -330,14 +345,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				248E130F2D9D1A6A005F4D9E /* HomeController.swift in Sources */,
+				24B9D7992DA405ED00C9BA66 /* WorkoutCell.swift in Sources */,
+				243C8F782DA3A84D00A1D814 /* RecipesController.swift in Sources */,
 				24EBF6B42D97226200DE015E /* AppDelegate.swift in Sources */,
 				248E13202DA0160A005F4D9E /* HelloCell.swift in Sources */,
 				248E131E2D9FF509005F4D9E /* TopCell.swift in Sources */,
 				24EBF6B62D97226200DE015E /* SceneDelegate.swift in Sources */,
 				248E131B2D9EA113005F4D9E /* CategoryCell.swift in Sources */,
 				248E130D2D9D1771005F4D9E /* HomeViewModel.swift in Sources */,
+				24B9D79B2DA55D9100C9BA66 /* RecipesDetailController.swift in Sources */,
 				248E13132D9D589B005F4D9E /* HomeCell.swift in Sources */,
+				24B9D7952DA3CB7300C9BA66 /* WorkoutsController.swift in Sources */,
 				248E13192D9E7417005F4D9E /* ImageLabelCell.swift in Sources */,
+				24B9D7972DA3FE0F00C9BA66 /* RecipeCell.swift in Sources */,
 				248E13172D9D62EB005F4D9E /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
