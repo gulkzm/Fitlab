@@ -8,18 +8,73 @@
 
 /* Begin PBXBuildFile section */
 		243C8F782DA3A84D00A1D814 /* RecipesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C8F772DA3A84D00A1D814 /* RecipesController.swift */; };
+		2468BBF32DB627FE00A86FC5 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2468BBF22DB627FE00A86FC5 /* RecipeManager.swift */; };
 		248E130D2D9D1771005F4D9E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E130C2D9D1771005F4D9E /* HomeViewModel.swift */; };
 		248E130F2D9D1A6A005F4D9E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E130E2D9D1A6A005F4D9E /* HomeController.swift */; };
 		248E13132D9D589B005F4D9E /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E13122D9D589B005F4D9E /* HomeCell.swift */; };
-		248E13172D9D62EB005F4D9E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E13162D9D62EB005F4D9E /* NavigationBar.swift */; };
 		248E13192D9E7417005F4D9E /* ImageLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E13182D9E7417005F4D9E /* ImageLabelCell.swift */; };
 		248E131B2D9EA113005F4D9E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E131A2D9EA113005F4D9E /* CategoryCell.swift */; };
 		248E131E2D9FF509005F4D9E /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E131D2D9FF509005F4D9E /* TopCell.swift */; };
 		248E13202DA0160A005F4D9E /* HelloCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E131F2DA0160A005F4D9E /* HelloCell.swift */; };
+		24A0344E2DAFA308003DF85F /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A0344D2DAFA308003DF85F /* StartController.swift */; };
+		24A034BD2DAFAF4F003DF85F /* InterDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B72DAFAF4F003DF85F /* InterDisplay-Regular.ttf */; };
+		24A034BE2DAFAF4F003DF85F /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A82DAFAF4F003DF85F /* Inter-Thin.ttf */; };
+		24A034BF2DAFAF4F003DF85F /* Inter-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A72DAFAF4F003DF85F /* Inter-SemiBoldItalic.ttf */; };
+		24A034C02DAFAF4F003DF85F /* InterDisplay-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B22DAFAF4F003DF85F /* InterDisplay-Italic.ttf */; };
+		24A034C12DAFAF4F003DF85F /* InterDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B52DAFAF4F003DF85F /* InterDisplay-Medium.ttf */; };
+		24A034C22DAFAF4F003DF85F /* Inter-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A0349D2DAFAF4F003DF85F /* Inter-ExtraBoldItalic.ttf */; };
+		24A034C32DAFAF4F003DF85F /* InterDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034AA2DAFAF4F003DF85F /* InterDisplay-Black.ttf */; };
+		24A034C42DAFAF4F003DF85F /* Inter-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A02DAFAF4F003DF85F /* Inter-Italic.ttf */; };
+		24A034C52DAFAF4F003DF85F /* InterDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034BA2DAFAF4F003DF85F /* InterDisplay-Thin.ttf */; };
+		24A034C62DAFAF4F003DF85F /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A0349A2DAFAF4F003DF85F /* Inter-Bold.ttf */; };
+		24A034C72DAFAF4F003DF85F /* InterDisplay-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034AB2DAFAF4F003DF85F /* InterDisplay-BlackItalic.ttf */; };
+		24A034C82DAFAF4F003DF85F /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A0349C2DAFAF4F003DF85F /* Inter-ExtraBold.ttf */; };
+		24A034C92DAFAF4F003DF85F /* Inter-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A42DAFAF4F003DF85F /* Inter-MediumItalic.ttf */; };
+		24A034CA2DAFAF4F003DF85F /* Inter-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034992DAFAF4F003DF85F /* Inter-BlackItalic.ttf */; };
+		24A034CB2DAFAF4F003DF85F /* InterDisplay-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B02DAFAF4F003DF85F /* InterDisplay-ExtraLight.ttf */; };
+		24A034CC2DAFAF4F003DF85F /* InterDisplay-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B12DAFAF4F003DF85F /* InterDisplay-ExtraLightItalic.ttf */; };
+		24A034CD2DAFAF4F003DF85F /* InterDisplay-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B62DAFAF4F003DF85F /* InterDisplay-MediumItalic.ttf */; };
+		24A034CE2DAFAF4F003DF85F /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A52DAFAF4F003DF85F /* Inter-Regular.ttf */; };
+		24A034CF2DAFAF4F003DF85F /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A32DAFAF4F003DF85F /* Inter-Medium.ttf */; };
+		24A034D02DAFAF4F003DF85F /* Inter-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A0349B2DAFAF4F003DF85F /* Inter-BoldItalic.ttf */; };
+		24A034D12DAFAF4F003DF85F /* Inter-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A0349F2DAFAF4F003DF85F /* Inter-ExtraLightItalic.ttf */; };
+		24A034D22DAFAF4F003DF85F /* Inter-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A92DAFAF4F003DF85F /* Inter-ThinItalic.ttf */; };
+		24A034D32DAFAF4F003DF85F /* Inter-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A22DAFAF4F003DF85F /* Inter-LightItalic.ttf */; };
+		24A034D42DAFAF4F003DF85F /* InterDisplay-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034AE2DAFAF4F003DF85F /* InterDisplay-ExtraBold.ttf */; };
+		24A034D52DAFAF4F003DF85F /* InterDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034AC2DAFAF4F003DF85F /* InterDisplay-Bold.ttf */; };
+		24A034D62DAFAF4F003DF85F /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A62DAFAF4F003DF85F /* Inter-SemiBold.ttf */; };
+		24A034D72DAFAF4F003DF85F /* InterDisplay-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B82DAFAF4F003DF85F /* InterDisplay-SemiBold.ttf */; };
+		24A034D82DAFAF4F003DF85F /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A0349E2DAFAF4F003DF85F /* Inter-ExtraLight.ttf */; };
+		24A034D92DAFAF4F003DF85F /* InterDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B32DAFAF4F003DF85F /* InterDisplay-Light.ttf */; };
+		24A034DA2DAFAF4F003DF85F /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034982DAFAF4F003DF85F /* Inter-Black.ttf */; };
+		24A034DB2DAFAF4F003DF85F /* InterDisplay-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034AF2DAFAF4F003DF85F /* InterDisplay-ExtraBoldItalic.ttf */; };
+		24A034DC2DAFAF4F003DF85F /* InterDisplay-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034AD2DAFAF4F003DF85F /* InterDisplay-BoldItalic.ttf */; };
+		24A034DD2DAFAF4F003DF85F /* InterDisplay-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034BB2DAFAF4F003DF85F /* InterDisplay-ThinItalic.ttf */; };
+		24A034DE2DAFAF4F003DF85F /* InterDisplay-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B92DAFAF4F003DF85F /* InterDisplay-SemiBoldItalic.ttf */; };
+		24A034DF2DAFAF4F003DF85F /* InterDisplay-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034B42DAFAF4F003DF85F /* InterDisplay-LightItalic.ttf */; };
+		24A034E02DAFAF4F003DF85F /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24A034A12DAFAF4F003DF85F /* Inter-Light.ttf */; };
+		24A034E22DAFCEB1003DF85F /* GetStartedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034E12DAFCEB1003DF85F /* GetStartedController.swift */; };
+		24A034E62DAFF1DD003DF85F /* FirstOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034E52DAFF1DD003DF85F /* FirstOnboardingController.swift */; };
+		24A034E82DAFF75F003DF85F /* SecondOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034E72DAFF75F003DF85F /* SecondOnboardingController.swift */; };
+		24A034EA2DAFF959003DF85F /* ThirdOnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034E92DAFF959003DF85F /* ThirdOnboardingController.swift */; };
+		24A034EC2DB02821003DF85F /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034EB2DB02821003DF85F /* WelcomeController.swift */; };
+		24A034EE2DB0344F003DF85F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034ED2DB0344F003DF85F /* LoginController.swift */; };
+		24A034F02DB03C80003DF85F /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034EF2DB03C80003DF85F /* RegisterController.swift */; };
+		24A034F72DB11FB9003DF85F /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034F62DB11FB9003DF85F /* KeychainManager.swift */; };
+		24A034FA2DB11FEE003DF85F /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 24A034F92DB11FEE003DF85F /* KeychainAccess */; };
+		24A034FD2DB23151003DF85F /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A034FC2DB23151003DF85F /* NetworkHelper.swift */; };
+		24A035022DB23667003DF85F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 24A035012DB23667003DF85F /* Alamofire */; };
+		24A035052DB2373A003DF85F /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 24A035042DB2373A003DF85F /* KeychainAccess */; };
+		24A0350B2DB245E3003DF85F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A0350A2DB245E3003DF85F /* NetworkManager.swift */; };
+		24A0350D2DB280A9003DF85F /* TokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A0350C2DB280A9003DF85F /* TokenInterceptor.swift */; };
+		24A035112DB58D38003DF85F /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A035102DB58D38003DF85F /* LoginResponse.swift */; };
+		24A035132DB58D62003DF85F /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A035122DB58D62003DF85F /* Auth.swift */; };
 		24B9D7952DA3CB7300C9BA66 /* WorkoutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D7942DA3CB7300C9BA66 /* WorkoutsController.swift */; };
 		24B9D7972DA3FE0F00C9BA66 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D7962DA3FE0E00C9BA66 /* RecipeCell.swift */; };
 		24B9D7992DA405ED00C9BA66 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D7982DA405ED00C9BA66 /* WorkoutCell.swift */; };
-		24B9D79B2DA55D9100C9BA66 /* RecipesDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D79A2DA55D9100C9BA66 /* RecipesDetailController.swift */; };
+		24B9D79D2DA563FA00C9BA66 /* RecipeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D79C2DA563FA00C9BA66 /* RecipeDetailController.swift */; };
+		24B9D79F2DA8012200C9BA66 /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D79E2DA8012200C9BA66 /* IngredientsCell.swift */; };
+		24B9D7A32DA9303600C9BA66 /* InstructionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9D7A22DA9303600C9BA66 /* InstructionsCell.swift */; };
 		24EBF6B42D97226200DE015E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6B32D97226200DE015E /* AppDelegate.swift */; };
 		24EBF6B62D97226200DE015E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBF6B52D97226200DE015E /* SceneDelegate.swift */; };
 		24EBF6BB2D97226200DE015E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 24EBF6BA2D97226200DE015E /* Base */; };
@@ -49,18 +104,70 @@
 
 /* Begin PBXFileReference section */
 		243C8F772DA3A84D00A1D814 /* RecipesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesController.swift; sourceTree = "<group>"; };
+		2468BBF22DB627FE00A86FC5 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		248E130C2D9D1771005F4D9E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		248E130E2D9D1A6A005F4D9E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		248E13122D9D589B005F4D9E /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		248E13162D9D62EB005F4D9E /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		248E13182D9E7417005F4D9E /* ImageLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelCell.swift; sourceTree = "<group>"; };
 		248E131A2D9EA113005F4D9E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		248E131D2D9FF509005F4D9E /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		248E131F2DA0160A005F4D9E /* HelloCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCell.swift; sourceTree = "<group>"; };
+		24A0344D2DAFA308003DF85F /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
+		24A034982DAFAF4F003DF85F /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		24A034992DAFAF4F003DF85F /* Inter-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-BlackItalic.ttf"; sourceTree = "<group>"; };
+		24A0349A2DAFAF4F003DF85F /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		24A0349B2DAFAF4F003DF85F /* Inter-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-BoldItalic.ttf"; sourceTree = "<group>"; };
+		24A0349C2DAFAF4F003DF85F /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		24A0349D2DAFAF4F003DF85F /* Inter-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		24A0349E2DAFAF4F003DF85F /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		24A0349F2DAFAF4F003DF85F /* Inter-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		24A034A02DAFAF4F003DF85F /* Inter-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Italic.ttf"; sourceTree = "<group>"; };
+		24A034A12DAFAF4F003DF85F /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		24A034A22DAFAF4F003DF85F /* Inter-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-LightItalic.ttf"; sourceTree = "<group>"; };
+		24A034A32DAFAF4F003DF85F /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		24A034A42DAFAF4F003DF85F /* Inter-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-MediumItalic.ttf"; sourceTree = "<group>"; };
+		24A034A52DAFAF4F003DF85F /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		24A034A62DAFAF4F003DF85F /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		24A034A72DAFAF4F003DF85F /* Inter-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		24A034A82DAFAF4F003DF85F /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		24A034A92DAFAF4F003DF85F /* Inter-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ThinItalic.ttf"; sourceTree = "<group>"; };
+		24A034AA2DAFAF4F003DF85F /* InterDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-Black.ttf"; sourceTree = "<group>"; };
+		24A034AB2DAFAF4F003DF85F /* InterDisplay-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-BlackItalic.ttf"; sourceTree = "<group>"; };
+		24A034AC2DAFAF4F003DF85F /* InterDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		24A034AD2DAFAF4F003DF85F /* InterDisplay-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-BoldItalic.ttf"; sourceTree = "<group>"; };
+		24A034AE2DAFAF4F003DF85F /* InterDisplay-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-ExtraBold.ttf"; sourceTree = "<group>"; };
+		24A034AF2DAFAF4F003DF85F /* InterDisplay-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		24A034B02DAFAF4F003DF85F /* InterDisplay-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-ExtraLight.ttf"; sourceTree = "<group>"; };
+		24A034B12DAFAF4F003DF85F /* InterDisplay-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		24A034B22DAFAF4F003DF85F /* InterDisplay-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-Italic.ttf"; sourceTree = "<group>"; };
+		24A034B32DAFAF4F003DF85F /* InterDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-Light.ttf"; sourceTree = "<group>"; };
+		24A034B42DAFAF4F003DF85F /* InterDisplay-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-LightItalic.ttf"; sourceTree = "<group>"; };
+		24A034B52DAFAF4F003DF85F /* InterDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		24A034B62DAFAF4F003DF85F /* InterDisplay-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-MediumItalic.ttf"; sourceTree = "<group>"; };
+		24A034B72DAFAF4F003DF85F /* InterDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		24A034B82DAFAF4F003DF85F /* InterDisplay-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-SemiBold.ttf"; sourceTree = "<group>"; };
+		24A034B92DAFAF4F003DF85F /* InterDisplay-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		24A034BA2DAFAF4F003DF85F /* InterDisplay-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-Thin.ttf"; sourceTree = "<group>"; };
+		24A034BB2DAFAF4F003DF85F /* InterDisplay-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterDisplay-ThinItalic.ttf"; sourceTree = "<group>"; };
+		24A034E12DAFCEB1003DF85F /* GetStartedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedController.swift; sourceTree = "<group>"; };
+		24A034E52DAFF1DD003DF85F /* FirstOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboardingController.swift; sourceTree = "<group>"; };
+		24A034E72DAFF75F003DF85F /* SecondOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingController.swift; sourceTree = "<group>"; };
+		24A034E92DAFF959003DF85F /* ThirdOnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboardingController.swift; sourceTree = "<group>"; };
+		24A034EB2DB02821003DF85F /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		24A034ED2DB0344F003DF85F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		24A034EF2DB03C80003DF85F /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		24A034F62DB11FB9003DF85F /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		24A034FC2DB23151003DF85F /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		24A0350A2DB245E3003DF85F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		24A0350C2DB280A9003DF85F /* TokenInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterceptor.swift; sourceTree = "<group>"; };
+		24A035102DB58D38003DF85F /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		24A035122DB58D62003DF85F /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		24B9D7942DA3CB7300C9BA66 /* WorkoutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsController.swift; sourceTree = "<group>"; };
 		24B9D7962DA3FE0E00C9BA66 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		24B9D7982DA405ED00C9BA66 /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
-		24B9D79A2DA55D9100C9BA66 /* RecipesDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailController.swift; sourceTree = "<group>"; };
+		24B9D79C2DA563FA00C9BA66 /* RecipeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailController.swift; sourceTree = "<group>"; };
+		24B9D79E2DA8012200C9BA66 /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
+		24B9D7A22DA9303600C9BA66 /* InstructionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCell.swift; sourceTree = "<group>"; };
 		24EBF6B02D97226200DE015E /* Fitlab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitlab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EBF6B32D97226200DE015E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24EBF6B52D97226200DE015E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +187,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A034FA2DB11FEE003DF85F /* KeychainAccess in Frameworks */,
+				24A035022DB23667003DF85F /* Alamofire in Frameworks */,
+				24A035052DB2373A003DF85F /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,11 +222,22 @@
 		248E13052D9B22B6005F4D9E /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				24A0344D2DAFA308003DF85F /* StartController.swift */,
+				24A034E12DAFCEB1003DF85F /* GetStartedController.swift */,
+				24A034E52DAFF1DD003DF85F /* FirstOnboardingController.swift */,
+				24A034E72DAFF75F003DF85F /* SecondOnboardingController.swift */,
+				24A034E92DAFF959003DF85F /* ThirdOnboardingController.swift */,
+				24A034EB2DB02821003DF85F /* WelcomeController.swift */,
+				24A034ED2DB0344F003DF85F /* LoginController.swift */,
+				24A034EF2DB03C80003DF85F /* RegisterController.swift */,
 				248E130E2D9D1A6A005F4D9E /* HomeController.swift */,
 				248E130C2D9D1771005F4D9E /* HomeViewModel.swift */,
 				24B9D7942DA3CB7300C9BA66 /* WorkoutsController.swift */,
-				24B9D79A2DA55D9100C9BA66 /* RecipesDetailController.swift */,
 				243C8F772DA3A84D00A1D814 /* RecipesController.swift */,
+				24B9D79C2DA563FA00C9BA66 /* RecipeDetailController.swift */,
+				24A035102DB58D38003DF85F /* LoginResponse.swift */,
+				2468BBF22DB627FE00A86FC5 /* RecipeManager.swift */,
+				24A035122DB58D62003DF85F /* Auth.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -124,7 +245,7 @@
 		248E13062D9B22C2005F4D9E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				248E13162D9D62EB005F4D9E /* NavigationBar.swift */,
+				24A034F62DB11FB9003DF85F /* KeychainManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -132,6 +253,9 @@
 		248E13072D9B22CC005F4D9E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				24A034FC2DB23151003DF85F /* NetworkHelper.swift */,
+				24A0350C2DB280A9003DF85F /* TokenInterceptor.swift */,
+				24A0350A2DB245E3003DF85F /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -145,6 +269,8 @@
 				248E131F2DA0160A005F4D9E /* HelloCell.swift */,
 				24B9D7982DA405ED00C9BA66 /* WorkoutCell.swift */,
 				24B9D7962DA3FE0E00C9BA66 /* RecipeCell.swift */,
+				24B9D79E2DA8012200C9BA66 /* IngredientsCell.swift */,
+				24B9D7A22DA9303600C9BA66 /* InstructionsCell.swift */,
 				248E131A2D9EA113005F4D9E /* CategoryCell.swift */,
 			);
 			path = Reusable;
@@ -157,9 +283,53 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		24A034BC2DAFAF4F003DF85F /* ttf */ = {
+			isa = PBXGroup;
+			children = (
+				24A034982DAFAF4F003DF85F /* Inter-Black.ttf */,
+				24A034992DAFAF4F003DF85F /* Inter-BlackItalic.ttf */,
+				24A0349A2DAFAF4F003DF85F /* Inter-Bold.ttf */,
+				24A0349B2DAFAF4F003DF85F /* Inter-BoldItalic.ttf */,
+				24A0349C2DAFAF4F003DF85F /* Inter-ExtraBold.ttf */,
+				24A0349D2DAFAF4F003DF85F /* Inter-ExtraBoldItalic.ttf */,
+				24A0349E2DAFAF4F003DF85F /* Inter-ExtraLight.ttf */,
+				24A0349F2DAFAF4F003DF85F /* Inter-ExtraLightItalic.ttf */,
+				24A034A02DAFAF4F003DF85F /* Inter-Italic.ttf */,
+				24A034A12DAFAF4F003DF85F /* Inter-Light.ttf */,
+				24A034A22DAFAF4F003DF85F /* Inter-LightItalic.ttf */,
+				24A034A32DAFAF4F003DF85F /* Inter-Medium.ttf */,
+				24A034A42DAFAF4F003DF85F /* Inter-MediumItalic.ttf */,
+				24A034A52DAFAF4F003DF85F /* Inter-Regular.ttf */,
+				24A034A62DAFAF4F003DF85F /* Inter-SemiBold.ttf */,
+				24A034A72DAFAF4F003DF85F /* Inter-SemiBoldItalic.ttf */,
+				24A034A82DAFAF4F003DF85F /* Inter-Thin.ttf */,
+				24A034A92DAFAF4F003DF85F /* Inter-ThinItalic.ttf */,
+				24A034AA2DAFAF4F003DF85F /* InterDisplay-Black.ttf */,
+				24A034AB2DAFAF4F003DF85F /* InterDisplay-BlackItalic.ttf */,
+				24A034AC2DAFAF4F003DF85F /* InterDisplay-Bold.ttf */,
+				24A034AD2DAFAF4F003DF85F /* InterDisplay-BoldItalic.ttf */,
+				24A034AE2DAFAF4F003DF85F /* InterDisplay-ExtraBold.ttf */,
+				24A034AF2DAFAF4F003DF85F /* InterDisplay-ExtraBoldItalic.ttf */,
+				24A034B02DAFAF4F003DF85F /* InterDisplay-ExtraLight.ttf */,
+				24A034B12DAFAF4F003DF85F /* InterDisplay-ExtraLightItalic.ttf */,
+				24A034B22DAFAF4F003DF85F /* InterDisplay-Italic.ttf */,
+				24A034B32DAFAF4F003DF85F /* InterDisplay-Light.ttf */,
+				24A034B42DAFAF4F003DF85F /* InterDisplay-LightItalic.ttf */,
+				24A034B52DAFAF4F003DF85F /* InterDisplay-Medium.ttf */,
+				24A034B62DAFAF4F003DF85F /* InterDisplay-MediumItalic.ttf */,
+				24A034B72DAFAF4F003DF85F /* InterDisplay-Regular.ttf */,
+				24A034B82DAFAF4F003DF85F /* InterDisplay-SemiBold.ttf */,
+				24A034B92DAFAF4F003DF85F /* InterDisplay-SemiBoldItalic.ttf */,
+				24A034BA2DAFAF4F003DF85F /* InterDisplay-Thin.ttf */,
+				24A034BB2DAFAF4F003DF85F /* InterDisplay-ThinItalic.ttf */,
+			);
+			path = ttf;
+			sourceTree = "<group>";
+		};
 		24EBF6A72D97226200DE015E = {
 			isa = PBXGroup;
 			children = (
+				24A034BC2DAFAF4F003DF85F /* ttf */,
 				24EBF6B22D97226200DE015E /* Fitlab */,
 				24EBF6C92D97226500DE015E /* FitlabTests */,
 				24EBF6D32D97226500DE015E /* FitlabUITests */,
@@ -300,6 +470,8 @@
 			);
 			mainGroup = 24EBF6A72D97226200DE015E;
 			packageReferences = (
+				24A035002DB23667003DF85F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				24A035032DB2373A003DF85F /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 24EBF6B12D97226200DE015E /* Products */;
 			projectDirPath = "";
@@ -317,6 +489,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A034BD2DAFAF4F003DF85F /* InterDisplay-Regular.ttf in Resources */,
+				24A034BE2DAFAF4F003DF85F /* Inter-Thin.ttf in Resources */,
+				24A034BF2DAFAF4F003DF85F /* Inter-SemiBoldItalic.ttf in Resources */,
+				24A034C02DAFAF4F003DF85F /* InterDisplay-Italic.ttf in Resources */,
+				24A034C12DAFAF4F003DF85F /* InterDisplay-Medium.ttf in Resources */,
+				24A034C22DAFAF4F003DF85F /* Inter-ExtraBoldItalic.ttf in Resources */,
+				24A034C32DAFAF4F003DF85F /* InterDisplay-Black.ttf in Resources */,
+				24A034C42DAFAF4F003DF85F /* Inter-Italic.ttf in Resources */,
+				24A034C52DAFAF4F003DF85F /* InterDisplay-Thin.ttf in Resources */,
+				24A034C62DAFAF4F003DF85F /* Inter-Bold.ttf in Resources */,
+				24A034C72DAFAF4F003DF85F /* InterDisplay-BlackItalic.ttf in Resources */,
+				24A034C82DAFAF4F003DF85F /* Inter-ExtraBold.ttf in Resources */,
+				24A034C92DAFAF4F003DF85F /* Inter-MediumItalic.ttf in Resources */,
+				24A034CA2DAFAF4F003DF85F /* Inter-BlackItalic.ttf in Resources */,
+				24A034CB2DAFAF4F003DF85F /* InterDisplay-ExtraLight.ttf in Resources */,
+				24A034CC2DAFAF4F003DF85F /* InterDisplay-ExtraLightItalic.ttf in Resources */,
+				24A034CD2DAFAF4F003DF85F /* InterDisplay-MediumItalic.ttf in Resources */,
+				24A034CE2DAFAF4F003DF85F /* Inter-Regular.ttf in Resources */,
+				24A034CF2DAFAF4F003DF85F /* Inter-Medium.ttf in Resources */,
+				24A034D02DAFAF4F003DF85F /* Inter-BoldItalic.ttf in Resources */,
+				24A034D12DAFAF4F003DF85F /* Inter-ExtraLightItalic.ttf in Resources */,
+				24A034D22DAFAF4F003DF85F /* Inter-ThinItalic.ttf in Resources */,
+				24A034D32DAFAF4F003DF85F /* Inter-LightItalic.ttf in Resources */,
+				24A034D42DAFAF4F003DF85F /* InterDisplay-ExtraBold.ttf in Resources */,
+				24A034D52DAFAF4F003DF85F /* InterDisplay-Bold.ttf in Resources */,
+				24A034D62DAFAF4F003DF85F /* Inter-SemiBold.ttf in Resources */,
+				24A034D72DAFAF4F003DF85F /* InterDisplay-SemiBold.ttf in Resources */,
+				24A034D82DAFAF4F003DF85F /* Inter-ExtraLight.ttf in Resources */,
+				24A034D92DAFAF4F003DF85F /* InterDisplay-Light.ttf in Resources */,
+				24A034DA2DAFAF4F003DF85F /* Inter-Black.ttf in Resources */,
+				24A034DB2DAFAF4F003DF85F /* InterDisplay-ExtraBoldItalic.ttf in Resources */,
+				24A034DC2DAFAF4F003DF85F /* InterDisplay-BoldItalic.ttf in Resources */,
+				24A034DD2DAFAF4F003DF85F /* InterDisplay-ThinItalic.ttf in Resources */,
+				24A034DE2DAFAF4F003DF85F /* InterDisplay-SemiBoldItalic.ttf in Resources */,
+				24A034DF2DAFAF4F003DF85F /* InterDisplay-LightItalic.ttf in Resources */,
+				24A034E02DAFAF4F003DF85F /* Inter-Light.ttf in Resources */,
 				24EBF6BD2D97226500DE015E /* Assets.xcassets in Resources */,
 				24EBF6C02D97226500DE015E /* Base in Resources */,
 				24EBF6BB2D97226200DE015E /* Base in Resources */,
@@ -344,21 +552,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A034FD2DB23151003DF85F /* NetworkHelper.swift in Sources */,
 				248E130F2D9D1A6A005F4D9E /* HomeController.swift in Sources */,
 				24B9D7992DA405ED00C9BA66 /* WorkoutCell.swift in Sources */,
+				24A0344E2DAFA308003DF85F /* StartController.swift in Sources */,
 				243C8F782DA3A84D00A1D814 /* RecipesController.swift in Sources */,
+				24A035132DB58D62003DF85F /* Auth.swift in Sources */,
+				2468BBF32DB627FE00A86FC5 /* RecipeManager.swift in Sources */,
+				24A034F72DB11FB9003DF85F /* KeychainManager.swift in Sources */,
+				24B9D7A32DA9303600C9BA66 /* InstructionsCell.swift in Sources */,
+				24A035112DB58D38003DF85F /* LoginResponse.swift in Sources */,
 				24EBF6B42D97226200DE015E /* AppDelegate.swift in Sources */,
+				24A0350D2DB280A9003DF85F /* TokenInterceptor.swift in Sources */,
 				248E13202DA0160A005F4D9E /* HelloCell.swift in Sources */,
 				248E131E2D9FF509005F4D9E /* TopCell.swift in Sources */,
+				24A034EC2DB02821003DF85F /* WelcomeController.swift in Sources */,
 				24EBF6B62D97226200DE015E /* SceneDelegate.swift in Sources */,
 				248E131B2D9EA113005F4D9E /* CategoryCell.swift in Sources */,
+				24A034EA2DAFF959003DF85F /* ThirdOnboardingController.swift in Sources */,
 				248E130D2D9D1771005F4D9E /* HomeViewModel.swift in Sources */,
-				24B9D79B2DA55D9100C9BA66 /* RecipesDetailController.swift in Sources */,
+				24A034EE2DB0344F003DF85F /* LoginController.swift in Sources */,
 				248E13132D9D589B005F4D9E /* HomeCell.swift in Sources */,
+				24A034F02DB03C80003DF85F /* RegisterController.swift in Sources */,
 				24B9D7952DA3CB7300C9BA66 /* WorkoutsController.swift in Sources */,
+				24A034E22DAFCEB1003DF85F /* GetStartedController.swift in Sources */,
+				24B9D79D2DA563FA00C9BA66 /* RecipeDetailController.swift in Sources */,
+				24B9D79F2DA8012200C9BA66 /* IngredientsCell.swift in Sources */,
 				248E13192D9E7417005F4D9E /* ImageLabelCell.swift in Sources */,
+				24A0350B2DB245E3003DF85F /* NetworkManager.swift in Sources */,
+				24A034E62DAFF1DD003DF85F /* FirstOnboardingController.swift in Sources */,
 				24B9D7972DA3FE0F00C9BA66 /* RecipeCell.swift in Sources */,
-				248E13172D9D62EB005F4D9E /* NavigationBar.swift in Sources */,
+				24A034E82DAFF75F003DF85F /* SecondOnboardingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +786,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Debug;
 		};
@@ -594,6 +819,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Release;
 		};
@@ -709,6 +935,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24A034F82DB11FEE003DF85F /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		24A035002DB23667003DF85F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		24A035032DB2373A003DF85F /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24A034F92DB11FEE003DF85F /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A034F82DB11FEE003DF85F /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		24A035012DB23667003DF85F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A035002DB23667003DF85F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		24A035042DB2373A003DF85F /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A035032DB2373A003DF85F /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24EBF6A82D97226200DE015E /* Project object */;
 }

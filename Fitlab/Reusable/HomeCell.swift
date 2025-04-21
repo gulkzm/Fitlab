@@ -12,6 +12,7 @@ class HomeCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "New Recipes"
         label.textAlignment = .center
+        label.textColor = .darkGreen
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -30,9 +31,9 @@ class HomeCell: UICollectionViewCell {
     private lazy var categoryCollection: UICollectionView = {
         let layout1 = UICollectionViewFlowLayout()
         layout1.scrollDirection = .horizontal
-        layout1.minimumLineSpacing = 20
+        layout1.minimumLineSpacing = 16
         layout1.minimumInteritemSpacing = 16
-        layout1.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 0)
+        layout1.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         
         let categoryCollection = UICollectionView(frame: .zero, collectionViewLayout: layout1)
         categoryCollection.showsHorizontalScrollIndicator = false
@@ -46,7 +47,7 @@ class HomeCell: UICollectionViewCell {
         layout2.scrollDirection = .horizontal
         layout2.minimumLineSpacing = 16
         layout2.minimumInteritemSpacing = 16
-        layout2.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 0)
+        layout2.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout2)
         collection.backgroundColor = .background
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +94,7 @@ class HomeCell: UICollectionViewCell {
             categoryCollection.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             collection.topAnchor.constraint(equalTo: categoryCollection.bottomAnchor, constant: 8),
-            collection.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collection.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
             collection.leadingAnchor.constraint(equalTo: leadingAnchor),
             collection.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
@@ -123,9 +124,9 @@ extension HomeCell: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             cell.backgroundColor = .cell
             cell.layer.cornerRadius = 16
             cell.layer.shadowColor = UIColor.black.cgColor
-                    cell.layer.shadowOpacity = 0.2
+                    cell.layer.shadowOpacity = 0.1
                     cell.layer.shadowOffset = CGSize(width: 0, height: 4)
-                    cell.layer.shadowRadius = 8
+                    cell.layer.shadowRadius = 4
                     cell.layer.masksToBounds = false
             return cell
         }

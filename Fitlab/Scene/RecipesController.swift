@@ -22,7 +22,7 @@ class RecipesController: UIViewController {
     
     private let searchField: UITextField = {
         let t = UITextField()
-        t.placeholder = "Search for a workout"
+        t.placeholder = "Search for a "
         t.font = .systemFont(ofSize: 16)
         t.textColor = .grey
         t.borderStyle = .none
@@ -44,9 +44,10 @@ class RecipesController: UIViewController {
     private lazy var recipeCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.collectionView?.backgroundColor = .background
         layout.minimumLineSpacing = 16
         layout.minimumInteritemSpacing = 16
-        layout.collectionView?.backgroundColor = .background
+        layout.sectionInset = .init(top: 0, left: 24, bottom: 16, right: 24)
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = .background
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +68,6 @@ class RecipesController: UIViewController {
         
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithTransparentBackground()
-        //        tabBarAppearance.backgroundColor = .clear
         if let tabBar = navigationController?.tabBarController?.tabBar {
             tabBar.layer.cornerRadius = 40
             tabBar.barTintColor = .white
@@ -109,8 +109,8 @@ class RecipesController: UIViewController {
             
             
             recipeCollection.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 16),
-            recipeCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            recipeCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            recipeCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            recipeCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             recipeCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
@@ -131,6 +131,11 @@ extension RecipesController: UICollectionViewDataSource, UICollectionViewDelegat
                 cell.layer.shadowRadius = 4
                 cell.layer.masksToBounds = false
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       let  controller = storyboard?.instantiateViewController(withIdentifier: "\(RecipeDetailController.self)") as! RecipeDetailController
+        navigationController?.show(controller, sender: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

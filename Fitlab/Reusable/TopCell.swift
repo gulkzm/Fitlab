@@ -59,8 +59,8 @@ class TopCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             imageAI.topAnchor.constraint(equalTo: topAnchor),
-            imageAI.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            imageAI.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            imageAI.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            imageAI.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             imageAI.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
 

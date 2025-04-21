@@ -13,7 +13,6 @@ class HelloCell: UICollectionViewCell {
         label.text = "Hello!"
         label.textAlignment = .left
         label.numberOfLines = 0
-
         label.textColor = .darkGreen
         label.font = .systemFont(ofSize: 24, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +34,7 @@ class HelloCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             helloLabel.topAnchor.constraint(equalTo: topAnchor),
             helloLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            helloLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 28),
+            helloLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             helloLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }

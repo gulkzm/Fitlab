@@ -32,7 +32,6 @@ class RecipeCell: UICollectionViewCell {
     private lazy var kcalImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "kcal")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +51,6 @@ class RecipeCell: UICollectionViewCell {
     private lazy var timeImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "time")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,25 +67,13 @@ class RecipeCell: UICollectionViewCell {
         return label
     }()
     
-//    private lazy var arrowImage: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.clipsToBounds = true
-////        imageView.layer.cornerRadius = 16
-//        imageView.contentMode = .scaleAspectFill
-//        imageView.image = UIImage(named: "arrow")
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        return imageView
-//    }()
-    
         private lazy var arrowButton: UIButton = {
             let button = UIButton()
             button.translatesAutoresizingMaskIntoConstraints = false
             button.setImage(UIImage(named: "arrow"), for: .normal)
-//            button.tintColor = .red
             button.imageView?.contentMode = .scaleAspectFit
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(arrowButtonTapped), for: .touchUpInside)
-    
             return button
         }()
     
@@ -132,21 +118,16 @@ class RecipeCell: UICollectionViewCell {
             
             timeImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             timeImage.leadingAnchor.constraint(equalTo: kcalLabel.trailingAnchor, constant: 20),
-//            timeImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -76),
             timeImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
             timeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             timeLabel.leadingAnchor.constraint(equalTo: timeImage.trailingAnchor, constant: 4),
             timeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             
-            
             arrowButton.heightAnchor.constraint(equalToConstant: 24),
             arrowButton.widthAnchor.constraint(equalToConstant: 24),
             arrowButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             arrowButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
-            
-            
-            
         ])
     }
     

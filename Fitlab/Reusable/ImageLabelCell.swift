@@ -32,7 +32,6 @@ class ImageLabelCell: UICollectionViewCell {
     private lazy var kcalImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "kcal")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +51,6 @@ class ImageLabelCell: UICollectionViewCell {
     private lazy var timeImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-//        imageView.layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "time")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,7 +81,6 @@ class ImageLabelCell: UICollectionViewCell {
         configureConstraints()
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -105,11 +102,9 @@ class ImageLabelCell: UICollectionViewCell {
             
             image.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             image.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-//            image.widthAnchor.constraint(equalToConstant: 168),
             image.heightAnchor.constraint(equalToConstant: 128),
             image.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             image.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -12),
-            //            image.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             kcalImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             kcalImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -130,9 +125,7 @@ class ImageLabelCell: UICollectionViewCell {
             timeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             
             favoriteButton.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-//            favoriteButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 128),
             favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-//            favoriteButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -176),
             favoriteButton.heightAnchor.constraint(equalToConstant: 60),
             favoriteButton.widthAnchor.constraint(equalToConstant: 60)
             

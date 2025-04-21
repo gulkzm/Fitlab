@@ -33,11 +33,9 @@ class WorkoutsController: UIViewController {
     private lazy var searchImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        //        imageView.layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "magnifyingglass")
         imageView.tintColor = .darkGreen
-//        imageView.image = UIImage(named: "magnifyingglass")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -45,17 +43,15 @@ class WorkoutsController: UIViewController {
     private lazy var workoutCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.collectionView?.backgroundColor = .background
         layout.minimumLineSpacing = 16
         layout.minimumInteritemSpacing = 16
-        layout.collectionView?.backgroundColor = .background
-//        layout.sectionInset = .init(top: 0, left: 24, bottom: 0, right: 0)
+        layout.sectionInset = .init(top: 0, left: 24, bottom: 16, right: 24)
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = .background
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +67,6 @@ class WorkoutsController: UIViewController {
         
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithTransparentBackground()
-        //        tabBarAppearance.backgroundColor = .clear
         if let tabBar = navigationController?.tabBarController?.tabBar {
             tabBar.layer.cornerRadius = 40
             tabBar.barTintColor = .white
@@ -110,7 +105,6 @@ class WorkoutsController: UIViewController {
             searchField.centerYAnchor.constraint(equalTo: searchView.centerYAnchor),
             searchField.leadingAnchor.constraint(equalTo: searchImage.trailingAnchor, constant: 16),
             searchField.trailingAnchor.constraint(equalTo: searchView.trailingAnchor, constant: -20),
-            
             
             workoutCollection.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 16),
             workoutCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
