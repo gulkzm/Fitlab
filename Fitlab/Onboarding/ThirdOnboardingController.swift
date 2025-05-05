@@ -74,7 +74,7 @@ class ThirdOnboardingController: UIViewController {
             aiImage.topAnchor.constraint(equalTo: view.topAnchor),
             aiImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             aiImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            aiImage.heightAnchor.constraint(equalToConstant: 464),
+//            aiImage.heightAnchor.constraint(equalToConstant: 464),
             aiImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -340),
             
             titleLabel.topAnchor.constraint(equalTo: aiImage.bottomAnchor, constant: 88),

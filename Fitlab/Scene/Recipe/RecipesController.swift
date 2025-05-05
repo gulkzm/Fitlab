@@ -1,13 +1,17 @@
 //
-//  WorkoutsController.swift
+//  RecipesController.swift
 //  Fitlab
 //
 //  Created by Gul Kzm on 07.04.25.
 //
 
 import UIKit
-
-class WorkoutsController: UIViewController {
+class RecipesController: UIViewController {
+    
+    let viewModel = RecipeViewModel()
+    
+    let refreshControl = UIRefreshControl()
+    
     private lazy var searchView: UIView! = {
         let view = UIView()
         view.layer.borderWidth = 2
@@ -21,7 +25,7 @@ class WorkoutsController: UIViewController {
     
     private let searchField: UITextField = {
         let t = UITextField()
-        t.placeholder = "Search for a workout"
+        t.placeholder = "Search for a recipe"
         t.font = .systemFont(ofSize: 16)
         t.textColor = .grey
         t.borderStyle = .none
@@ -40,7 +44,7 @@ class WorkoutsController: UIViewController {
         return imageView
     }()
     
-    private lazy var workoutCollection: UICollectionView = {
+    private lazy var recipeCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.collectionView?.backgroundColor = .background
@@ -53,10 +57,23 @@ class WorkoutsController: UIViewController {
         return collection
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.backButtonDisplayMode = .minimal
+        let backItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backItem
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         configureConstraints()
+        configureViewModel()
+        
+        recipeCollection.dataSource = self
+        recipeCollection.delegate = self
+        
+        viewModel.getRecipeList()
+        
         
         let navigationAppearance = UINavigationBarAppearance()
         navigationAppearance.configureWithTransparentBackground()
@@ -77,17 +94,36 @@ class WorkoutsController: UIViewController {
     }
     
     fileprivate func configureUI() {
-        [workoutCollection, searchView,
+        [recipeCollection, searchView,
          searchField,
          searchImage
         ].forEach{view.addSubview($0)}
         
-        workoutCollection.dataSource = self
-        workoutCollection.delegate = self
-        
-        workoutCollection.register(WorkoutCell.self, forCellWithReuseIdentifier: "WorkoutCell")
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        recipeCollection.refreshControl = refreshControl
+        recipeCollection.register(RecipeCell.self, forCellWithReuseIdentifier: "RecipeCell")
     }
     
+    func configureViewModel() {
+        viewModel.success = { [weak self] in
+            DispatchQueue.main.async {
+                self?.recipeCollection.reloadData()
+                self?.refreshControl.endRefreshing()
+            }
+        }
+        
+        viewModel.error = { [weak self] errorMessage in
+            print("❌ Error: \(errorMessage)")
+            DispatchQueue.main.async {
+                self?.refreshControl.endRefreshing()
+            }
+        }
+    }
+    
+    @objc func pullToRefresh() {
+        viewModel.reset()
+        viewModel.getRecipeList()
+    }
     
     fileprivate func configureConstraints() {
         NSLayoutConstraint.activate([
@@ -106,33 +142,62 @@ class WorkoutsController: UIViewController {
             searchField.leadingAnchor.constraint(equalTo: searchImage.trailingAnchor, constant: 16),
             searchField.trailingAnchor.constraint(equalTo: searchView.trailingAnchor, constant: -20),
             
-            workoutCollection.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 16),
-            workoutCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            workoutCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-            workoutCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             
+            recipeCollection.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 16),
+            recipeCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            recipeCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            recipeCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    func showRecipeDetail(recipe: Recipe) {
+        let coordinator = DetailCoordinator(recipe: recipe, navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
     }
 }
 
-extension WorkoutsController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+
+extension RecipesController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        40
+        return viewModel.numberOfRecipes
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WorkoutCell", for: indexPath) as! WorkoutCell
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath) as? RecipeCell else {
+            fatalError("Could not dequeue RecipeCell")
+        }
+        
+        let recipe = viewModel.recipe(at: indexPath.item)
+        cell.configure(with: recipe)
+        
+        cell.didRecipeSelected = { [weak self] selectedRecipe in
+            self?.showRecipeDetail(recipe: selectedRecipe)
+        }
+        
         cell.backgroundColor = .cell
         cell.layer.cornerRadius = 16
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.1
         cell.layer.shadowOffset = CGSize(width: 0, height: 4)
-        cell.layer.shadowRadius = 8
+        cell.layer.shadowRadius = 4
         cell.layer.masksToBounds = false
+
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedRecipe = viewModel.recipe(at: indexPath.item)
+        let controller = RecipeDetailController()
+        controller.selectedRecipe = selectedRecipe
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 340, height: 240)
+        .init(width: 332, height: 116)
     }
 }
+
+
+

@@ -88,6 +88,7 @@ class LoginController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .darkGreen
         self.navigationController?.navigationBar.barTintColor = .background
     }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,11 +113,12 @@ class LoginController: UIViewController {
                 return
             }
 
-            AuthService.shared.login(email: emailText, password: passwordText) { result in
+            AuthManager.shared.login(email: emailText, password: passwordText) { result in
                 switch result {
                 case .success:
                     DispatchQueue.main.async {
                         self.switchToMainTabBar()
+                        
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {

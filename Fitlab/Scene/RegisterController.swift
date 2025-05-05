@@ -103,6 +103,12 @@ class RegisterController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        view.backgroundColor = .background
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .background
+        appearance.shadowColor = .clear
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     override func viewDidLoad() {
@@ -113,11 +119,7 @@ class RegisterController: UIViewController {
     }
     
     @objc private func registerButtonTapped(){
-        view.backgroundColor = .background
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .background
-        appearance.shadowColor = .clear
-        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+       
         
         let nameText = fullname.text ?? ""
         let emailText = email.text ?? ""
@@ -128,10 +130,10 @@ class RegisterController: UIViewController {
             print("Fields must not be empty")
             return
         }
-        
+        let manager = AuthManager()
 //        let gender = "female"
         
-        AuthService.shared.register(fullname: nameText, email: emailText, password: passwordText, gender: "female") { result in
+        manager.register(fullname: nameText, email: emailText, password: passwordText, gender: "female") { result in
             switch result {
             case .success:
                 DispatchQueue.main.async {

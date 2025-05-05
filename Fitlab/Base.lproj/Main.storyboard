@@ -10,21 +10,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recipe Detail Controller-->
+        <!--Recipes Controller-->
         <scene sceneID="XXc-Gr-gs6">
             <objects>
-                <viewController storyboardIdentifier="RecipeDetailController" id="Ps5-3Q-PbE" customClass="RecipeDetailController" customModule="Fitlab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipesController" id="Ps5-3Q-PbE" customClass="RecipesController" customModule="Fitlab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5fk-LC-KId">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="9yY-89-L7I"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Background"/>
                     </view>
                     <navigationItem key="navigationItem" id="eQy-h9-IES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hJ-IB-ekx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2971.7557251908397" y="-833.09859154929586"/>
+        </scene>
+        <!--Recipe Detail Controller-->
+        <scene sceneID="J8U-JE-78a">
+            <objects>
+                <viewController storyboardIdentifier="RecipeDetailController" id="95a-gg-W4y" customClass="RecipeDetailController" customModule="Fitlab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UhJ-So-at9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CFX-cF-8Ku"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQk-SY-GqP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3804" y="-833"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yLQ-hg-GKS">
@@ -202,7 +217,7 @@
         <scene sceneID="Wpj-Qb-BwD">
             <objects>
                 <viewController storyboardIdentifier="RegisterController" id="ACL-o8-INY" customClass="RegisterController" customModule="Fitlab" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CDV-Lj-TIC" customClass="Regi">
+                    <view key="view" contentMode="scaleToFill" id="CDV-Lj-TIC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zkt-c6-YRq"/>
@@ -234,7 +249,6 @@
                     <connections>
                         <segue destination="Ftl-qy-z3Y" kind="relationship" relationship="viewControllers" id="bsf-RM-DvX"/>
                         <segue destination="3Hu-ZL-iua" kind="relationship" relationship="viewControllers" id="TJm-kd-UTU"/>
-                        <segue destination="9C5-QJ-bLu" kind="relationship" relationship="viewControllers" id="M45-mS-Ryk"/>
                         <segue destination="Y8k-Nq-00r" kind="relationship" relationship="viewControllers" id="QPI-Sy-ZIq"/>
                         <segue destination="p4t-sB-QAP" kind="relationship" relationship="viewControllers" id="IJB-80-ymm"/>
                     </connections>
@@ -378,7 +392,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

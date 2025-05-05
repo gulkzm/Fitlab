@@ -1,5 +1,5 @@
 //
-//  Auth.swift
+//  AuthManager.swift
 //  Fitlab
 //
 //  Created by Gul Kzm on 21.04.25.
@@ -7,11 +7,9 @@
 
 import Alamofire
 
-import Alamofire
 
-class AuthService {
-    static let shared = AuthService()
-    private let baseUrl = "https://fit-lab-cae25759b1fd.herokuapp.com/api/v1"
+class AuthManager {
+    static let shared = AuthManager()
 
     func register(fullname: String, email: String, password: String, gender: String, completion: @escaping (Result<Void, Error>) -> Void) {
         let params: Parameters = [
@@ -20,8 +18,8 @@ class AuthService {
             "password": password,
             "gender": gender
         ]
-
-        AF.request("\(baseUrl)/auth/register", method: .post, parameters: params, encoding: JSONEncoding.default)
+        
+        AF.request("\(NetworkHelper.shared.baseURL)/auth/register", method: .post, parameters: params, encoding: JSONEncoding.default)
             .validate()
             .response { response in
                 switch response.result {
@@ -39,7 +37,7 @@ class AuthService {
             "password": password
         ]
 
-        AF.request("\(baseUrl)/auth/login", method: .post, parameters: params, encoding: JSONEncoding.default)
+        AF.request("\(NetworkHelper.shared.baseURL)/auth/login", method: .post, parameters: params, encoding: JSONEncoding.default)
             .validate()
             .responseDecodable(of: TokenResponse.self) { response in
                 switch response.result {

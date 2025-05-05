@@ -21,8 +21,8 @@ class InstructionsCell: UITableViewCell {
         let l  = UILabel()
         l.text = "1"
         l.textAlignment = .left
-        l.font = .systemFont(ofSize: 12,  weight: .medium)
-        l.textColor = .darkGreen
+        l.font = .systemFont(ofSize: 12,  weight: .semibold)
+        l.textColor = .white
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
@@ -47,6 +47,13 @@ class InstructionsCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configure(with instruction: Instruction?, index: Int) {
+        let text = instruction?.rawValue ?? ""
+         insLabel.text = "\(text)"
+        
+        stepsLabel.text = "\(index + 1)"
+        }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

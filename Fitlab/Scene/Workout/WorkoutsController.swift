@@ -1,13 +1,21 @@
 //
-//  RecipesController.swift
+//  WorkoutsController.swift
 //  Fitlab
 //
 //  Created by Gul Kzm on 07.04.25.
 //
 
 import UIKit
+import SafariServices
+//
+//protocol WorkoutCellDelegate: AnyObject {
+//    func didTapPlayButton(for workout: Workout)
+//}
 
-class RecipesController: UIViewController {
+class WorkoutsController: UIViewController {
+    let viewModel = WorkoutViewModel()
+
+    let refreshControl = UIRefreshControl()
     
     private lazy var searchView: UIView! = {
         let view = UIView()
@@ -22,7 +30,7 @@ class RecipesController: UIViewController {
     
     private let searchField: UITextField = {
         let t = UITextField()
-        t.placeholder = "Search for a "
+        t.placeholder = "Search for a workout"
         t.font = .systemFont(ofSize: 16)
         t.textColor = .grey
         t.borderStyle = .none
@@ -41,7 +49,7 @@ class RecipesController: UIViewController {
         return imageView
     }()
     
-    private lazy var recipeCollection: UICollectionView = {
+    private lazy var workoutCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.collectionView?.backgroundColor = .background
@@ -58,6 +66,12 @@ class RecipesController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureConstraints()
+        configureViewModel()
+        
+        workoutCollection.delegate = self
+        workoutCollection.dataSource = self
+        
+        viewModel.getWorkoutList()
         
         let navigationAppearance = UINavigationBarAppearance()
         navigationAppearance.configureWithTransparentBackground()
@@ -78,17 +92,40 @@ class RecipesController: UIViewController {
     }
     
     fileprivate func configureUI() {
-        [recipeCollection, searchView,
+        [workoutCollection, searchView,
          searchField,
          searchImage
         ].forEach{view.addSubview($0)}
         
-        recipeCollection.dataSource = self
-        recipeCollection.delegate = self
+//        workoutCollection.dataSource = self
+//        workoutCollection.delegate = self
         
-        recipeCollection.register(RecipeCell.self, forCellWithReuseIdentifier: "RecipeCell")
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        workoutCollection.refreshControl = refreshControl
+        
+        workoutCollection.register(WorkoutCell.self, forCellWithReuseIdentifier: "WorkoutCell")
     }
     
+    func configureViewModel() {
+        viewModel.success = { [weak self] in
+            DispatchQueue.main.async {
+                self?.workoutCollection.reloadData()
+                self?.refreshControl.endRefreshing()
+            }
+        }
+
+        viewModel.error = { [weak self] errorMessage in
+            print("❌ Error: \(errorMessage)")
+            DispatchQueue.main.async {
+                self?.refreshControl.endRefreshing()
+            }
+        }
+    }
+    
+    @objc func pullToRefresh() {
+        viewModel.reset()
+        viewModel.getWorkoutList()
+    }
     
     fileprivate func configureConstraints() {
         NSLayoutConstraint.activate([
@@ -107,41 +144,54 @@ class RecipesController: UIViewController {
             searchField.leadingAnchor.constraint(equalTo: searchImage.trailingAnchor, constant: 16),
             searchField.trailingAnchor.constraint(equalTo: searchView.trailingAnchor, constant: -20),
             
+            workoutCollection.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 16),
+            workoutCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            workoutCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            workoutCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             
-            recipeCollection.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 16),
-            recipeCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            recipeCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-            recipeCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }
 
-extension RecipesController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension WorkoutsController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        40
+//        40
+        return viewModel.numberOfWorkouts
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath) as! RecipeCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WorkoutCell", for: indexPath) as? WorkoutCell else {
+               fatalError("Could not dequeue RecipeCell")
+           }
+        let workout = viewModel.workout(at: indexPath.item)
+        cell.configure(with: workout)
+        cell.delegate = self
+
         cell.backgroundColor = .cell
         cell.layer.cornerRadius = 16
         cell.layer.shadowColor = UIColor.black.cgColor
-                cell.layer.shadowOpacity = 0.1
-                cell.layer.shadowOffset = CGSize(width: 0, height: 4)
-                cell.layer.shadowRadius = 4
-                cell.layer.masksToBounds = false
+        cell.layer.shadowOpacity = 0.1
+        cell.layer.shadowOffset = CGSize(width: 0, height: 4)
+        cell.layer.shadowRadius = 8
+        cell.layer.masksToBounds = false
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       let  controller = storyboard?.instantiateViewController(withIdentifier: "\(RecipeDetailController.self)") as! RecipeDetailController
-        navigationController?.show(controller, sender: nil)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 332, height: 116)
+        .init(width: 340, height: 220)
     }
-    
 }
 
 
+extension WorkoutsController: WorkoutCellDelegate {
+    func didTapPlayButton(for workout: Workout) {
+        let urlString = workout.videoURL
+        guard let url = URL(string: urlString) else {
+            print("❌ Invalid video URL")
+            return
+        }
+
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true)
+    }
+}

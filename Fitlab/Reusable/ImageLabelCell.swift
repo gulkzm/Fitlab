@@ -7,7 +7,15 @@
 
 import UIKit
 
+
+protocol HomeCellProtocol {
+    var titleText: String { get }
+}
+
 class ImageLabelCell: UICollectionViewCell {
+    
+    static let identifier = "ImageLabelCell"
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Healthy Taco Salad with fresh vegetable"
@@ -19,7 +27,7 @@ class ImageLabelCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var image: UIImageView = {
+    lazy var image: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 16
@@ -78,12 +86,16 @@ class ImageLabelCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        //configureUI()
         configureConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //configureUI
     
     fileprivate func configureConstraints() {
         
@@ -128,7 +140,6 @@ class ImageLabelCell: UICollectionViewCell {
             favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             favoriteButton.heightAnchor.constraint(equalToConstant: 60),
             favoriteButton.widthAnchor.constraint(equalToConstant: 60)
-            
         ])
     }
     
@@ -138,4 +149,25 @@ class ImageLabelCell: UICollectionViewCell {
         let imageName = isFavorited ? "heart.fill" : "heart"
         favoriteButton.setImage(UIImage(named: imageName), for: .normal)
     }
+    
+    func configure(with recipe: NewRecipe) {
+        titleLabel.text = recipe.name
+        image.loadImage(from: recipe.imageURL)
+        timeLabel.text = recipe.cookingTime
+        kcalLabel.text = recipe.calories
+    }
+    
+    func configureWorkout(with workout: NewWorkout) {
+        titleLabel.text = workout.name
+        image.loadImage(from: workout.image)
+        timeLabel.isHidden = true
+        timeImage.isHidden = true
+        kcalImage.isHidden = true
+        kcalLabel.isHidden = true
+    }
+    
+//    func configure(with title: String, imageURL: String) {
+//        titleLabel.text = title
+//        image.loadImage(from: imageURL)
+//    }
 }

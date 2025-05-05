@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol WorkoutCellDelegate: AnyObject {
+    func didTapPlayButton(for workout: Workout)
+}
+
 class WorkoutCell: UICollectionViewCell {
+    
+    weak var delegate: WorkoutCellDelegate?
+     private var workout: Workout?
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Healthy Taco Salad with fresh vegetable"
@@ -40,6 +48,22 @@ class WorkoutCell: UICollectionViewCell {
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
+    
+//    protocol WorkoutCellDelegate: AnyObject {
+//        func didTapPlayButton(for workout: Workout)
+//    }
+    
+//    func didTapPlayButton(for workout: Workout) {
+//        let correctedURLString = workout.videoURL.replacingOccurrences(of: "httpshttps", with: "https")
+//        guard let url = URL(string: correctedURLString) else {
+//            print("❌ Invalid video URL")
+//            return
+//        }
+//
+//        let safariVC = SFSafariViewController(url: url)
+//        present(safariVC, animated: true)
+//    }
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,8 +99,17 @@ class WorkoutCell: UICollectionViewCell {
     }
     
     @objc private func imageTapped(gesture: UIGestureRecognizer) {
-        if (gesture.view as? UIImageView) != nil {
-            print("Image Tapped")
-        }
+//        if (gesture.view as? UIImageView) != nil {
+//            print("Image Tapped")
+//        }
+        
+        guard let workout = workout else { return }
+               delegate?.didTapPlayButton(for: workout)
+    }
+    
+    func configure(with workout: Workout) {
+        self.workout = workout
+        titleLabel.text = workout.name
+        image.loadImage(from: workout.image)
     }
 }

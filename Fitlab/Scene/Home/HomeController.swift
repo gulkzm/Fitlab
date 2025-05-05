@@ -9,6 +9,28 @@ import UIKit
 
 class HomeController: UIViewController {
     
+    private let homeManager = HomeManager()
+    private var newRecipes: [NewRecipe] = []
+    private var newWorkouts: [NewWorkout] = []
+    
+    private func fetchHomeData() {
+        homeManager.getNewRecipes { [weak self] recipes in
+            self?.newRecipes = recipes.data
+            print("✅ Recipes loaded: \(recipes.data)")
+            DispatchQueue.main.async {
+                self?.homeCollection.reloadData()
+            }
+        }
+        
+        homeManager.getNewWorkouts { [weak self] workouts in
+            self?.newWorkouts = workouts.data
+            print("✅ Workouts loaded: \(workouts.data)")
+            DispatchQueue.main.async {
+                self?.homeCollection.reloadData()
+            }
+        }
+    }
+    
     private let viewModel = HomeViewModel()
     
     private lazy var homeCollection: UICollectionView = {
@@ -28,6 +50,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchHomeData()
         homeCollection.dataSource = self
         homeCollection.delegate = self
         configureUI()
@@ -62,14 +85,15 @@ class HomeController: UIViewController {
     
     fileprivate func configureConstraints() {
         NSLayoutConstraint.activate([
-            homeCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: -28),
+            homeCollection.topAnchor.constraint(equalTo: view.topAnchor, constant: -8),
             homeCollection.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             homeCollection.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             homeCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
 }
- 
+
 extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         4
@@ -82,12 +106,15 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
+            cell.configure(title: "Latest Recipes", recipes: newRecipes)
+            
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCell", for: indexPath) as! TopCell
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
+            cell.configureWorkout(title: "Latest Workouts", workouts: newWorkouts)
             return cell
         default:
             fatalError("Unexpected index")
@@ -99,11 +126,11 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
         case 0:
                 .init(width: collectionView.frame.width, height: 40)
         case 1:
-                .init(width: collectionView.frame.width, height: 360)
+                .init(width: collectionView.frame.width, height: 312)
         case 2:
                 .init(width: collectionView.frame.width, height: 152)
         case 3:
-                .init(width: collectionView.frame.width, height: 360)
+                .init(width: collectionView.frame.width, height: 312)
         default:
             fatalError("Unexpected index")
         }

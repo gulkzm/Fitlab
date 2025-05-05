@@ -8,6 +8,21 @@
 import UIKit
 
 class HomeCell: UICollectionViewCell {
+    private var recipes: [NewRecipe] = []
+    private var workouts: [NewWorkout] = []
+    
+    var isWorkoutCell: Bool = false
+    
+//    enum HomeCellType {
+//        case header
+//        case recipes(NewRecipe)
+//        case ai
+//        case workouts(NewWorkout)
+//
+//    }
+//    
+//    var cellType: HomeCellType?
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "New Recipes"
@@ -19,14 +34,14 @@ class HomeCell: UICollectionViewCell {
     }()
     
     
-    private lazy var seeAllButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("See All", for: .normal)
-        button.setTitleColor(.sea, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(seeAllButtonTapped), for: .touchUpInside)
-        return button
-    }()
+//    private lazy var seeAllButton: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("See All", for: .normal)
+//        button.setTitleColor(.sea, for: .normal)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.addTarget(self, action: #selector(seeAllButtonTapped), for: .touchUpInside)
+//        return button
+//    }()
     
     private lazy var categoryCollection: UICollectionView = {
         let layout1 = UICollectionViewFlowLayout()
@@ -65,40 +80,59 @@ class HomeCell: UICollectionViewCell {
     }
     
     fileprivate func configureUI() {
-        categoryCollection.dataSource = self
-        categoryCollection.delegate = self
+//        categoryCollection.dataSource = self
+//        categoryCollection.delegate = self
         
         collection.dataSource = self
         collection.delegate = self
         
-        categoryCollection.register(CategoryCell.self, forCellWithReuseIdentifier: "CategoryCell")
+//       categoryCollection.register(CategoryCell.self, forCellWithReuseIdentifier: "CategoryCell")
         collection.register(ImageLabelCell.self, forCellWithReuseIdentifier: "ImageLabelCell")
     }
     
     fileprivate func configureConstraints() {
         addSubview(titleLabel)
-        addSubview(seeAllButton)
-        addSubview(categoryCollection)
+//        addSubview(seeAllButton)
+//        addSubview(categoryCollection)
         addSubview(collection)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             
-            seeAllButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-            seeAllButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+//            seeAllButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+//            seeAllButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            categoryCollection.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
-            categoryCollection.heightAnchor.constraint(equalToConstant: 40),
-            categoryCollection.leadingAnchor.constraint(equalTo: leadingAnchor),
-            categoryCollection.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            categoryCollection.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+//            categoryCollection.heightAnchor.constraint(equalToConstant: 40),
+//            categoryCollection.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            categoryCollection.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            collection.topAnchor.constraint(equalTo: categoryCollection.bottomAnchor, constant: 8),
-            collection.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
+            collection.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            collection.bottomAnchor.constraint(equalTo: bottomAnchor),
             collection.leadingAnchor.constraint(equalTo: leadingAnchor),
             collection.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
+    
+    func configure(title: String, recipes: [NewRecipe]) {
+        titleLabel.text = title
+        self.isWorkoutCell = false
+        self.recipes = recipes
+        collection.reloadData()
+    }
+    
+    func configureWorkout(title: String, workouts: [NewWorkout]) {
+        titleLabel.text = title
+        self.isWorkoutCell = true
+        self.workouts = workouts
+        collection.reloadData()
+    }
+   
+    
+    let controller = HomeController()
+    let cell = ImageLabelCell()
+
     @objc private func seeAllButtonTapped(){
         
     }
@@ -107,36 +141,64 @@ class HomeCell: UICollectionViewCell {
 extension HomeCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == categoryCollection {
-            return 5
-        } else {
-            return 20
-        }
+//            return 20
+        isWorkoutCell ? workouts.count : recipes.count
+            
+//        switch cellType {
+//           case .recipes(let recipes):
+//            return recipes.count
+//           case .workouts(let workouts):
+//            return workouts.count
+//           default:
+//               return 0
+//           }
+        
+//        return !recipes.isEmpty ? recipes.count : workouts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == categoryCollection {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-            cell.layer.cornerRadius = 16
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageLabelCell", for: indexPath) as! ImageLabelCell
+        cell.backgroundColor = .cell
+        cell.layer.cornerRadius = 16
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 0.1
+        cell.layer.shadowOffset = CGSize(width: 0, height: 4)
+        cell.layer.shadowRadius = 4
+        cell.layer.masksToBounds = false
+        
+//        if !recipes.isEmpty {
+//            let recipe = recipes[indexPath.item]
+//            cell.configure(with: recipe)
+//        } else if !workouts.isEmpty {
+//            let workout = workouts[indexPath.item]
+//            cell.configureWorkout(with: workout)
+//        }
+//        switch cellType {
+//            case .recipes(let recipes):
+//                let recipe = recipes[indexPath.item]
+//                cell.configure(with: recipe)
+//            case .workouts(let workouts):
+//                let workout = workouts[indexPath.item]
+//                cell.configureWorkout(with: workout)
+//            default:
+//                break
+//            }
+        
+//       cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageLabelCell", for: indexPath) as! ImageLabelCell
+              if isWorkoutCell {
+                  let workout = workouts[indexPath.item]
+                         cell.configureWorkout(with: workout)
+//                  cell.configure(title: workout.name, imageUrl: workout.image)
+              } else {
+                  let recipe = recipes[indexPath.item]
+                
+                                 cell.configure(with: recipe)
+//                  cell.configure(title: recipe.name, imageUrl: recipe.image)
+              }
             return cell
-        } else  {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageLabelCell", for: indexPath) as! ImageLabelCell
-            cell.backgroundColor = .cell
-            cell.layer.cornerRadius = 16
-            cell.layer.shadowColor = UIColor.black.cgColor
-                    cell.layer.shadowOpacity = 0.1
-                    cell.layer.shadowOffset = CGSize(width: 0, height: 4)
-                    cell.layer.shadowRadius = 4
-                    cell.layer.masksToBounds = false
-            return cell
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == categoryCollection{
-            .init(width: 120, height: 40)
-        } else {
             .init(width: 200, height: 240)
-        }
     }
 }

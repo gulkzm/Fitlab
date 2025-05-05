@@ -80,7 +80,7 @@ class FirstOnboardingController: UIViewController {
             recipeImage.topAnchor.constraint(equalTo: view.topAnchor),
             recipeImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             recipeImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            recipeImage.heightAnchor.constraint(equalToConstant: 464),
+//            recipeImage.heightAnchor.constraint(equalToConstant: 464),
             recipeImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -340),
             
             titleLabel.topAnchor.constraint(equalTo: recipeImage.bottomAnchor, constant: 88),

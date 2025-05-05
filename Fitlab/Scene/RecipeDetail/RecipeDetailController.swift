@@ -9,6 +9,9 @@ import UIKit
 
 class RecipeDetailController: UIViewController {
     
+    var selectedRecipe: Recipe?
+    
+    
     private lazy var recipeImage: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
@@ -109,7 +112,7 @@ class RecipeDetailController: UIViewController {
         table.dataSource = self
         table.separatorStyle = .none
         table.translatesAutoresizingMaskIntoConstraints = false
-        //        table.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+ 
         return table
     }()
     var isFavorited = false
@@ -133,35 +136,28 @@ class RecipeDetailController: UIViewController {
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        
-//        // Apply once only if needed
-//        segmentedControl.layer.cornerRadius = segmentedControl.bounds.height / 2
-//        segmentedControl.layer.masksToBounds = true
-//    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureUI()
-        configureConstrainits()
-    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.tintColor = .darkGreen
         segmentedControl.layer.cornerRadius = segmentedControl.bounds.height / 2
         segmentedControl.layer.masksToBounds = true
         
-        
-        
-        
-//        if let selectedSegmentView = segmentedControl.subviews.first {
-//            selectedSegmentView.layer.cornerRadius = segmentedControl.bounds.height / 2
-//            selectedSegmentView.layer.masksToBounds = true
-//        }
     }
     
-  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureUI()
+        configureConstrainits()
+        
+        if let recipe = selectedRecipe {
+                recipeName.text = recipe.name
+                recipeImage.loadImage(from: recipe.image)
+                kcalLabel.text = recipe.calories
+                timeLabel.text = recipe.cookingTime
+                level.text = recipe.difficulty.rawValue
+            }
+    }
     
     fileprivate func configureUI() {
         [recipeImage, detailView,
@@ -171,7 +167,6 @@ class RecipeDetailController: UIViewController {
         
         tableView.register(IngredientsCell.self, forCellReuseIdentifier: "IngredientsCell")
         tableView.register(InstructionsCell.self, forCellReuseIdentifier: "InstructionsCell")
-       
     }
     
     fileprivate func configureConstrainits() {
@@ -179,7 +174,7 @@ class RecipeDetailController: UIViewController {
             recipeImage.topAnchor.constraint(equalTo: view.topAnchor),
             recipeImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             recipeImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            recipeImage.heightAnchor.constraint(equalToConstant: 280),
+            recipeImage.heightAnchor.constraint(equalToConstant: 292),
             
             favorite.topAnchor.constraint(equalTo: detailView.topAnchor, constant: 12),
            
@@ -190,10 +185,9 @@ class RecipeDetailController: UIViewController {
             detailView.topAnchor.constraint(equalTo: recipeImage.bottomAnchor,constant: -12),
             detailView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             detailView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            //            detailView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            detailView.heightAnchor.constraint(equalToConstant: 264),
+            detailView.heightAnchor.constraint(equalToConstant: 236),
             
-            recipeName.topAnchor.constraint(equalTo: recipeImage.bottomAnchor, constant: 20),
+            recipeName.topAnchor.constraint(equalTo: recipeImage.bottomAnchor, constant: 12),
             recipeName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
             recipeName.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             
@@ -226,7 +220,6 @@ class RecipeDetailController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            //            tableView.reloadData()
         ])
     }
 //    
@@ -252,25 +245,37 @@ class RecipeDetailController: UIViewController {
 
         segmentedControl.layer.cornerRadius = segmentedControl.bounds.height / 2
         segmentedControl.layer.masksToBounds = true
-        tableView.reloadData()  // Reload the table when the segmented control changes
-        
+        tableView.reloadData()
     }
 }
 
 extension RecipeDetailController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        switch segmentedControl.selectedSegmentIndex {
+            case 0:
+                return selectedRecipe?.ingredients.count ?? 0
+            case 1:
+                return selectedRecipe?.instructions.count ?? 0
+            default:
+                return 0
+            }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsCell", for: indexPath) as! IngredientsCell
             
-            
+            let ingredient = selectedRecipe?.ingredients[indexPath.row]
+            cell.configure(with: ingredient)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "InstructionsCell", for: indexPath) as! InstructionsCell
+            
+            let instruction = selectedRecipe?.instructions[indexPath.row]
+            cell.configure(with: instruction, index: indexPath.row)
+
             return cell
         default:
             fatalError("Unexpected index")
@@ -283,11 +288,9 @@ extension RecipeDetailController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             40
         case 1:
-            80
+            40
         default:
             0
         }
     }
-    
-    
 }

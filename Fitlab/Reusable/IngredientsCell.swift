@@ -38,6 +38,14 @@ class IngredientsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(with ingredient: Ingredient?) {
+        let quantity = ingredient?.quantity ?? ""
+         let unit = ingredient?.unit.rawValue ?? ""
+         let name = ingredient?.name.rawValue ?? ""
+
+         ingLabel.text = "\(name) \(quantity) \(unit)"
+        }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -47,7 +55,6 @@ class IngredientsCell: UITableViewCell {
         addSubview(ingLabel)
         
         NSLayoutConstraint.activate([
-//            checkImage.topAnchor.constraint(equalTo: topAnchor, constant: <#T##CGFloat#>)
             checkImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             checkImage.heightAnchor.constraint(equalToConstant: 24),
             checkImage.widthAnchor.constraint(equalToConstant: 24),

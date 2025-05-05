@@ -77,6 +77,8 @@ class RecipeCell: UICollectionViewCell {
             return button
         }()
     
+    var didRecipeSelected: ((Recipe) -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureConstraints()
@@ -133,5 +135,12 @@ class RecipeCell: UICollectionViewCell {
     
     @objc private func arrowButtonTapped() {
         print("Button Tapped")
+    }
+    
+    func configure(with recipe: Recipe) {
+        titleLabel.text = recipe.name
+        image.loadImage(from: recipe.image) 
+        timeLabel.text = recipe.cookingTime
+        kcalLabel.text = recipe.calories
     }
 }
